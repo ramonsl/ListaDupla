@@ -3,4 +3,7 @@ public class Elemento {
     public int valor;
     public Elemento proximo;
 
+    public Elemento(int v){
+        valor=v;
+    }
 }

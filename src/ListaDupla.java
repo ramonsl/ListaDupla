@@ -32,5 +32,24 @@ public class ListaDupla {
         }
     }
 
-    
+    public boolean add(Elemento e, int pos){
+        if(this.inicio==null || pos<=0){
+            return add(e);
+        }
+        if (pos>this.qtd){
+            return addFim(e);
+        }
+        Elemento aux=this.inicio;
+        for (int i=0;i<pos;i++){
+            aux=aux.proximo;
+        }
+        e.anterior= aux.anterior;
+        aux.anterior.proximo =e;
+        e.proximo = aux;
+        aux.anterior=e;
+        this.qtd++;
+        return true;
+    }
+
+
 }
