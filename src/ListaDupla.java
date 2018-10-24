@@ -52,4 +52,6 @@ public class ListaDupla {
     }
 
 
+    public boolean del()
+
 }
