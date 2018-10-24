@@ -90,10 +90,18 @@ public class ListaDupla {
         }
 
     }
-    public boolean delEmX(){
-
-        
+    public boolean delEmX(int x){
+        if(this.inicio==null || x>=qtd || qtd==1){
+           return delFim();
+        }else{
+            Elemento aux=this.inicio;
+            for(int i=0; i<x;i++){
+                aux=aux.proximo;
+            }
+            aux.anterior.proximo=aux.proximo;
+            aux.proximo.anterior=aux.anterior;
+            qtd--;
+            return true;
+        }
     }
-
-
 }
