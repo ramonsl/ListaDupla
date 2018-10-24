@@ -52,6 +52,48 @@ public class ListaDupla {
     }
 
 
-    public boolean del()
+    public boolean delInicio(){
+        if(this.inicio==null){
+            return false;
+        }
+        if(this.inicio.proximo==null){
+            this.inicio=null;
+            this.fim=null;
+            qtd--;
+            return true;
+        }else {
+            Elemento aux = inicio.proximo;
+            inicio = aux;
+            aux.anterior = null;
+            qtd--;
+            return true;
+        }
+    }
+    public boolean delFim(){
+        if (this.fim==null || this.qtd==1) {
+          return   delInicio();
+        }else{
+            Elemento aux= this.fim;
+            Elemento penultimo= aux.anterior;
+            penultimo.proximo=null;
+            ///segunda forma
+            //  aux.anterior.proximo =null;
+           //   this.fim =aux.anterior;
+            ///terceira foma
+            //this.fim.anterior.proximo=null;
+           // this.fim=this.fim.anterior;
+
+            this.fim = penultimo;
+            qtd--;
+            return true;
+
+        }
+
+    }
+    public boolean delEmX(){
+
+        
+    }
+
 
 }
